@@ -18,6 +18,10 @@
         <module>cloud-consumerZK-order80</module>
         <module>cloud-providerconsul-payment8006</module>
         <module>cloud-consumerconsul-order80</module>
+        <module>cloud-consumer-feign-order80</module>
+        <module>cloud-provider-hystrix-payment8001</module>
+        <module>cloud-consumer-feign-hystrix-order80</module>
+        <module>cloud-gateway-gateway9527</module>
     </modules>
 
     <!-- 统一管理jar包版本 -->
@@ -28,7 +32,7 @@
         <junit.version>4.12</junit.version>
         <log4j.version>1.2.17</log4j.version>
         <lombok.version>1.18.30</lombok.version>
-        <mysql.version>5.1.47</mysql.version>
+        <mysql.version>8.0.33</mysql.version>
         <druid.version>1.2.20</druid.version>
         <mybatis.spring.boot.version>1.3.0</mybatis.spring.boot.version>
     </properties>

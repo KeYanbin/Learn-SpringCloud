@@ -1,0 +1,35 @@
+server:
+  port: 80
+eureka:
+  client:
+    register-with-eureka: false
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/
+
+feign:
+  client:
+    config:
+      # 默认配置 如果不单独配置每个服务会走默认配置
+      default:
+        logger-level: full # 日志级别 NONE：不打印  BASIC：打印简单信息 HEADERS：打印头信息 FULL：打印全部信息 （默认 NONE）
+        connectTimeout: 5000 # 连接超时时间 默认值：10000毫秒
+        readTimeout: 4000 # 读取超时时间 默认值：60000毫秒
+      # 配置单独FeignClient
+      # 如果FeignClient注解设置了contextId这里就使用contextId=OrderClient
+      # 如果没有设置contextId就直接使用服务名称CLOUD-PAYMENT-SERVICE
+#      OrderClient:
+#        connectTimeout: 2000 # 连接超时时间 默认值：10000毫秒
+#        readTimeout: 5000 # 读取超时时间 默认值：60000毫秒
+#        logger-level: full # 单独配置日志级别
+
+  ##设置feign客户端超时时间(OpenFeign默认支持ribbon)
+  #ribbon:
+  #  ReadTimeout: 5000
+  #  ConnectTimeout: 5000
+
+  ###############设置日志##############
+  # 设置指定日志输出级别为debug，我这里将我自己com.atguigu包所有日志输出级别设置成了debug，根据自己需要来即可
+logging:
+  level:
+    com:
+      atguigu: debug
